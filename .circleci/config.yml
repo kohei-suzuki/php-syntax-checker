@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: php:7
+    environment:
+      TZ: /usr/share/zoneinfo/Asia/Tokyo
+    working_directory: /app
+    steps:
+      - checkout
+      - run: sh php_syntax_checker.sh
